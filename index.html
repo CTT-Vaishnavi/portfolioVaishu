@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Portfolio-Vaishnavi Shinde</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"/>
+</head>
+<body>
+
+  <nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+    </label>
+    <label  class="logo">Vaishnavi Shinde</label>
+    <ul>
+      <li><a href="./Home.html">Home</a></li>
+      <li><a href="./Skill.html">Skill</a></li>
+      <li><a class="active"  href="./Blog.html">Blog / Project</a></li>
+        <li><a href="./My Intro.html">My Intro</a></li>
+        <li><a href="./Contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+
+      <div class="main">
+        <div class="infocontainer">
+          <div class="info">
+            <div class="hello">Hi I am</div>
+            <div class="name">Vaishnavi Shinde</div>
+            <div class="about">Developer,Entrepreneur,Dancer</div>
+            <div class="moreabout"  >
+              I am <span style="color: #007bff;"> front end developer</span> specillised in MERN technology . Skill
+              of the mongo DB, Express ,React,Node Js . Extra skill of the HTML
+              ,CSS,PHP,JS.
+            </div>
+            <div class="button">
+              <button>
+                <a href="./resume vs.png" target="_blank"
+                  ><i class="fa-solid fa-cloud-arrow-down"></i>Download CV</a
+                >
+              </button>
+              <button>
+                <a href="./Contact.html" target="_blank">Contact Me</a>
+              </button>
+
+              <div class="hire">
+                <button>
+                  <a
+                    href="./resume vs.png"
+                    download="./resume vs.png"
+                    >Hire me</a
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="devpic">
+            <img src="./pic.jpg" alt="Vaishnavi shinde" srcset="" />
+          </div>
+        </div>
+
+        <div class="connect" style="display: block;
+        margin-left: 30px; 
+        text-align: center;">
+            <h1 ><u>Connect me .......     </u></h1>
+
+            <div class="symbol" style="display: flex;text-align: center; gap: 30px; margin-top: 10px ;"  >
+                <div class="button" onclick="showMessage('Github')">
+                  <div class="icon" style="font-size: 5vh;">
+                    <a href="https://github.com/CTT-Vaishnavi"
+                      ><i class="fa-brands fa-github" style="color: #000;"></i
+                    ></a>
+                  </div>
+                  <span>Github</span>
+                </div>
+    
+                <div class="button" onclick="showMessage('Whatsapp')">
+                  <div class="icon" style="font-size: 5vh;">
+                    <a
+                      href="https://wa.me/+918177921044"
+                      target="_blank"
+                      style="color: #25d366 " 
+                      ><i class="fa-brands fa-whatsapp"></i
+                    ></a>
+                  </div>
+                  <span>Whatsapp</span>
+                </div>
+    
+                <div class="button" onclick="showMessage('LinkedIn')">
+                  <div class="icon" style="font-size: 5vh;">
+                    <a href="https://www.linkedin.com/in/vaishnavi-shinde-11226733a" style="color: #4267b2;"
+                      ><i class="fa-brands fa-linkedin"></i
+                    ></a>
+                  </div>
+                  <span>LinkedIn</span>
+                </div>
+    
+                <div class="button" onclick="showMessage('Instagram')">
+                  <div class="icon" style="font-size: 5vh;">
+                    <a href="https://www.instagram.com/_Its_vaishushinde0064"
+                    style="color: #c13584;"
+                      ><i class="fa-brands fa-instagram"></i
+                    ></a>
+                  </div>
+                  <span>Instagram</span>
+                </div>
+
+
+                <div class="button" onclick="showMessage('Gmail')">
+                  <div class="icon" style="font-size: 5vh;">
+                    <a href="mailto:shindevai2004@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                  </div>
+                  <span>Gmail</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        
+
+        <script>
+          function showMessage(platform) {
+            alert(`You clicked on: ${platform}`);
+          }
+        </script>
+      </div>
+    </div>
+  </body>
+</html>

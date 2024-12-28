@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../project/Service.html" />
+    <link rel="stylesheet" href="../style.css">
+    <title>Portfolio - Vaishnavi Shinde</title>
+    <style>
+ 
+  body {
+    color: #efffef;
+    background-color: #081b29;}
+   
+    nav {
+    background-color: green;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul li {
+    margin-right: 20px;
+  }
+  
+  ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  ul li a:hover {
+    color: lightgreen;
+  }
+  
+  .checkbtn {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    display: none;
+  }
+  
+  #check {
+    display: none;
+  }
+  /* Styles for mobile devices */
+@media (max-width: 768px) {
+  .checkbtn {
+    display: block;
+    order: 1;
+    margin-right: 20px;
+  }
+
+  ul {
+    position: fixed;
+    top: 80px;
+    right: -100%;
+    background-color: green;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+  }
+
+  ul li {
+    margin: 20px 0;
+  }
+
+  ul li a {
+    font-size: 20px;
+  }
+
+  #check:checked ~ ul {
+    right: 0;
+  }
+}
+
+/* Styles for larger screens */
+@media (min-width: 769px) {
+  .checkbtn {
+    display: none; /* Hide the button on larger screens */
+  }
+
+  ul {
+    position: static; /* Change position to static */
+    display: flex; /* Display as a flex container */
+    flex-direction: row; /* Align items in a row */
+    justify-content: flex-end; /* Align items to the right */
+    background-color: transparent; /* Change background color */
+    height: auto; /* Set height to auto */
+    transition: none; /* Remove transition */
+  }
+
+  ul li {
+    margin: 0 20px; /* Adjust margin for horizontal layout */
+  }
+
+  ul li a {
+    font-size: 16px; /* Adjust font size for larger screens */
+  }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Times New Roman", Times, serif;
+    box-sizing: border-box;
+  }
+
+  
+  .sub-title {
+    text-align: center;
+    font-size: 60px;
+    padding-bottom: 70px;
+    padding-top: 30px;
+  }
+  .sub-title span {
+    color: aqua;
+  }
+  section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .container1 {
+    width: 600px;
+    padding: 75px 90px;
+    margin: 0 auto;
+  }
+  .Heading {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 40px;
+  }
+  .bar {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+  }
+  .bar i {
+    font-size: 30px;
+    margin-right: 10px;
+  }
+  .progress-line {
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background: #444;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .progress-line span {
+    display: block;
+    height: 100%;
+    background: aqua;
+    width: 0; /* Start with 0 width */
+    transition: width 2s; /* Smooth transition */
+  }
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .container1 {
+      width: 90%;
+      padding: 50px 20px;
+    }
+    .sub-title {
+      font-size: 40px;
+    }
+    .Heading {
+      font-size: 30px;
+    }
+  }
+  .radial-bars{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+  .radial-bars .radial-bar{
+    width: 50%;
+    height: 170px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .radial-bars .radial-bar svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(-90deg);
+    width: 120px;
+    height: 160px;
+  }
+  .radial-bars .radial-bar .progress-bar{
+    stroke-width: 10;
+    stroke: black;
+    fill: transparent;
+    stroke-dasharray: 502;
+    stroke-dashoffset: 502;
+    stroke-linecap: round;
+    animation: animate-bar is linear forwards;
+  }
+
+
+  .radial-bar .percentage {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+        font-weight: 500;
+        opacity: 0; /* Start hidden */
+        animation: showText 0.5s 1s linear forwards; /* Delay to match animation */
+    }
+  .radial-bars .radial-bar .percentage {
+    font-size: 20px;
+  }
+  @keyframes animate-bar {
+        100% {
+            stroke-dashoffset: 0; /* Animate to full */
+        }
+    }
+
+    .path {
+        stroke-width: 10;
+        stroke: #0ef;
+        fill: transparent;
+        stroke-dasharray: 502;
+        stroke-dashoffset: 502;
+        stroke-linecap: round;
+    }
+
+    .path-1 {
+        animation: animate-path1 1s linear forwards;
+    }
+
+    .path-2 {
+        animation: animate-path2 1s linear forwards;
+    }
+
+    .path-3 {
+        animation: animate-path3 1s linear forwards;
+    }
+
+    .path-4 {
+        animation: animate-path4 1s linear forwards;
+    }
+
+    @keyframes animate-path1 {
+        100% {
+            stroke-dashoffset: 50; /* Adjust this value based on your needs */
+        }
+    }
+
+    @keyframes animate-path2 {
+        100% {
+            stroke-dashoffset: 175; /* Adjust this value based on your needs */
+        }
+    }
+
+    @keyframes animate-path3 {
+        100% {
+            stroke-dashoffset: 125; /* Adjust this value based on your needs */
+        }
+    }
+
+    @keyframes animate-path4 {
+        100% {
+            stroke-dashoffset: 75; /* Adjust this value based on your needs */
+        }
+    }
+    @keyframes showText {
+        to {
+            opacity: 1; /* Fade in */
+        }
+    }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    />
+  </head>
+  <body>
+
+
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+      </label>
+      <label  class="logo">Vaishnavi Shinde</label>
+      <ul>
+        <li><a href="./Home.html">Home</a></li>
+        <li><a href="./Skill.html">Skill</a></li>
+        <li><a class="active"  href="./Blog.html">Blog / Project</a></li>
+          <li><a href="./My Intro.html">My Intro</a></li>
+          <li><a href="./Contact.html">Contact</a></li>
+      </ul>
+  </nav>
+
+    <h1 class="sub-title">My <span>Skills</span></h1>
+    <section>
+      <div class="container1" id="skills">
+        <h1 class="Heading"><u>Technical Skills</u></h1>
+        <div class="bar">
+          <i class="fa-brands fa-html5" style="color: red;"></i>
+          <pre>HTML </pre>
+          <div class="progress-line">
+            <span data-skill="90%"></span>
+            <!-- Adjust width for each skill -->
+          </div>
+        </div>
+        <div class="bar">
+          <i class="fa-brands fa-css3-alt" style="color: skyblue;"></i>
+          <pre>CSS      </pre>
+          <div class="progress-line">
+            <span data-skill="85%"></span>
+          </div>
+        </div>
+        <div class="bar">
+          <i class="fa-brands fa-js" style="color: yellow;"></i>
+          <pre>JS </pre>
+          <div class="progress-line">
+            <span data-skill="80%"></span>
+          </div>
+        </div>
+        <div class="bar">
+          <i class="fa-brands fa-php"></i>
+          <pre>PHP </pre>
+          <div class="progress-line">
+            <span data-skill="75%"></span>
+          </div>
+        </div>
+        <div class="bar">
+          <i class="fa-brands fa-java"></i>
+          <pre>Java </pre>
+          <div class="progress-line">
+            <span data-skill="70%"></span>
+          </div>
+        </div>
+        <div class="bar">
+          <i class="fa-brands fa-react" style="color: blue;"></i>
+          <pre>React </pre>
+          <div class="progress-line">
+            <span data-skill="85%"></span>
+          </div>
+        </div>
+        <div class="bar">
+          <i class="fa-brands fa-node-js" style="color: green;"></i>
+          <pre>JS</pre>
+          <div class="progress-line">
+            <span data-skill="80%"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Function to animate skill bars
+      function animateSkills() {
+        const skills = document.querySelectorAll(".progress-line span");
+        skills.forEach((skill) => {
+          const skillValue = skill.getAttribute("data-skill");
+          skill.style.width = skillValue; // Set the width based on the data-skill attribute
+        });
+      }
+
+      // Function to check if the skills section is in the viewport
+      function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <=
+            (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <=
+            (window.innerWidth || document.documentElement.clientWidth)
+        );
+      }
+
+      // Event listener for scroll
+      window.addEventListener("scroll", () => {
+        const skillsSection = document.getElementById("skills");
+        if (isInViewport(skillsSection)) {
+          animateSkills(); // Animate skills when the section is in view
+          window.removeEventListener("scroll", arguments.callee); // Remove the event listener after animation
+        }
+      });
+    </script>
+    <div class="container1" id="skills">
+        <h1 class="Heading"><u>Professional Skills</u></h1>
+        <div class="radial-bars">
+          <div class="radial-bar">
+          <svg x="0px "y=0px viewBox="0 0 200 200">
+            <circle circle class="progress-bar" cx=""100 cy="100" r=""80></circle>
+            <circle class="path path-1" cx="100" cy="100"r="80"></circle>
+          </svg>
+          <div class="percentage">90%</div>
+          <div class="text">Creativity</div>
+
+          </div>
+
+          <div class="radial-bar">
+            <svg x="0px "y=0px viewBox="0 0 200 200">
+              <circle circle class="progress-bar" cx=""100 cy="100" r=""80></circle>
+              <circle class="path path-2" cx="100" cy="100"r="80"></circle>
+            </svg>
+            <div class="percentage">65%</div>
+            <div class="text">Communication</div>
+  
+            </div>
+
+            <div class="radial-bar">
+              <svg x="0px "y=0px viewBox="0 0 200 200">
+                <circle circle class="progress-bar" cx=""100 cy="100" r=""80></circle>
+                <circle class="path path-3" cx="100" cy="100"r="80"></circle>
+              </svg>
+              <div class="percentage">85%</div>
+              <div class="text">Problem Solving</div>
+    
+              </div>
+
+              <div class="radial-bar">
+                <svg x="0px "y=0px viewBox="0 0 200 200">
+                  <circle circle class="progress-bar" cx=""100 cy="100" r=""80></circle>
+                  <circle class="path path-4" cx="100" cy="100"r="80"></circle>
+                </svg>
+                <div class="percentage">60%</div>
+                <div class="text">Teamwork</div>
+      
+                </div>
+
+        </div>
+        <div class="connect" style="display: block;">
+          <h1 ><u>Connect me .......     </u></h1>
+
+          <div class="symbol" style="display: flex; gap: 30px; margin-top: 10px ;"  >
+              <div class="button" onclick="showMessage('Github')">
+                <div class="icon">
+                  <a href="https://github.com/CTT-Vaishnavi"
+                    ><i class="fa-brands fa-github" style="color: #000;"></i
+                  ></a>
+                </div>
+                <span>Github</span>
+              </div>
+  
+              <div class="button" onclick="showMessage('Whatsapp')">
+                <div class="icon">
+                  <a
+                    href="https://wa.me/+918177921044"
+                    target="_blank"
+                    style="color: #25d366"
+                    ><i class="fa-brands fa-whatsapp"></i
+                  ></a>
+                </div>
+                <span>Whatsapp</span>
+              </div>
+  
+              <div class="button" onclick="showMessage('LinkedIn')">
+                <div class="icon">
+                  <a href="https://www.linkedin.com/in/vaishnavi-shinde-11226733a" style="color: #4267b2;"
+                    ><i class="fa-brands fa-linkedin"></i
+                  ></a>
+                </div>
+                <span>LinkedIn</span>
+              </div>
+  
+              <div class="button" onclick="showMessage('Instagram')">
+                <div class="icon">
+                  <a href="https://www.instagram.com/_Its_vaishushinde0064"
+                  style="color: #c13584;"
+                    ><i class="fa-brands fa-instagram"></i
+                  ></a>
+                </div>
+                <span>Instagram</span>
+              </div>
+
+
+              <div class="button" onclick="showMessage('Gmail')">
+                <div class="icon">
+                  <a href="mailto:shindevai2004@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+                <span>Gmail</span>
+              </div>
+
+          </div>
+
+      </div>
+
+      
+
+      <script>
+        function showMessage(platform) {
+          alert(`You clicked on: ${platform}`);
+        }
+      </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <title>Portfolio-Vaishnavi Shinde</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        justify-content: center;
+        text-align: center;
+      }
+      
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  nav {
+    background-color: green;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul li {
+    margin-right: 20px;
+  }
+  
+  ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  ul li a:hover {
+    color: lightgreen;
+  }
+  
+  .checkbtn {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    display: none;
+  }
+  
+  #check {
+    display: none;
+  }
+  /* Styles for mobile devices */
+@media (max-width: 768px) {
+  .checkbtn {
+    display: block;
+    order: 1;
+    margin-right: 20px;
+  }
+
+  ul {
+    position: fixed;
+    top: 80px;
+    right: -100%;
+    background-color: green;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+  }
+
+  ul li {
+    margin: 20px 0;
+  }
+
+  ul li a {
+    font-size: 20px;
+  }
+
+  #check:checked ~ ul {
+    right: 0;
+  }
+}
+
+/* Styles for larger screens */
+@media (min-width: 769px) {
+  .checkbtn {
+    display: none; /* Hide the button on larger screens */
+  }
+
+  ul {
+    position: static; /* Change position to static */
+    display: flex; /* Display as a flex container */
+    flex-direction: row; /* Align items in a row */
+    justify-content: flex-end; /* Align items to the right */
+    background-color: transparent; /* Change background color */
+    height: auto; /* Set height to auto */
+    transition: none; /* Remove transition */
+  }
+
+  ul li {
+    margin: 0 20px; /* Adjust margin for horizontal layout */
+  }
+
+  ul li a {
+    font-size: 16px; /* Adjust font size for larger screens */
+  }
+}
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #000;
+        
+      }
+
+      header {
+        background-color: #333;
+        padding: 10px;
+        text-align: center;
+        display: flex;
+      }
+
+      header nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 18px;
+      }
+
+      header nav a:hover {
+        color: #00bcd4;
+      }
+
+      .about {
+        display: block;
+        text-align: center;
+        padding: 50px 20px;
+      }
+
+      .about img {
+        border-radius: 50%;
+        border: 5px solid #00bcd4;
+        width: 150px;
+        height: 150px;
+      }
+
+      .about h1 {
+        font-size: 36px;
+        margin: 20px 0;
+      }
+
+      .connect h1{
+        font-size: 36px;
+        margin: 20px 0;
+      }
+      .about p {
+        font-size: 18px;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .about p span {
+        color: #00bcd4;
+      }
+
+      .download-button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #00bcd4;
+        color: #000;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 18px;
+      }
+
+      .download-button:hover {
+        background-color: #0097a7;
+      }
+      
+
+      body {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+        background: #f0f0f0;
+      }
+
+      .container {
+        display: flex;
+        width: 100%;
+      }
+
+      .sidebar {
+        flex: 1;
+        min-width: 200px; 
+      }
+
+      .nav {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .nav li {
+        margin: 10px 0;
+      }
+
+      .nav a {
+        text-decoration: none;
+        color: #333;
+      }
+
+      .main {
+        flex: 3;
+        padding: 20px;
+      }
+
+      .infocontainer {
+        display: flex;
+        align-items: center; /* Center items vertically */
+        justify-content: space-between; /* Space between items */
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+      }
+
+
+      .button {
+        display: flex;
+        height: 85px;
+        width: 85px;
+        margin: 5px;
+        overflow: hidden;
+        background: #fff;
+        border-radius: 50px;
+        cursor: pointer;
+        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease-out;
+        text-align: center;
+        line-height: 70px;
+        position: relative; /* For positioning the icon and text */
+      }
+
+      .button:hover {
+        width: 200px;
+      }
+
+      .icon {
+        font-size: 60px; /* Adjust icon size */
+        line-height: 60px; /* Center icon vertically */
+        transition: all 0.3s ease-out;
+      }
+
+      .button:hover .icon {
+        background: #4267b2; /* Change background on hover */
+        color: #fff; /* Change icon color on hover */
+      }
+
+      .button span {
+        display: inline-block; /* Ensure span is inline-block */
+        margin-left: 10px; /* Space between icon and text */
+        color: #333; /* Default text color */
+        transition: color 0.3s ease-out; /* Smooth color transition */
+      }
+
+      .button:hover span {
+        color: #4267b2; /* Change text color on hover */
+      }
+
+      /* Specific button colors */
+      .button:nth-child(1) .icon {
+        color: #4267b2;
+      }
+      .button:nth-child(2) .icon {
+        color: #333;
+      }
+      .button:nth-child(3) .icon {
+        color: #1da1f2;
+      }
+      .button:nth-child(4) .icon {
+        color: #25d366;
+      }
+      .button:nth-child(5) .icon {
+        color: #0077b5;
+      }
+      .button:nth-child(6) .icon {
+        color: #c13584;
+      }
+      .button:nth-child(7) .icon {
+        color: #c16f35;
+      }
+
+      /* Media Queries for Responsiveness */
+      @media (max-width: 768px) {
+        .infocontainer {
+          flex-direction: column; /* Stack items vertically on small screens */
+          align-items: flex-start; /* Align items to the start */
+        }
+
+        .devpic {
+          margin-top: 20px; /* Add some space above the image */
+          width: 100%; /* Full width for the image container */
+        }
+
+        .button {
+          width: 100%; /* Full width for buttons */
+          justify-content: flex-start; /* Align button content to the left */
+        }
+
+        .button span {
+          margin-left: 0; /* Remove margin on small screens */
+        }
+      }
+
+      .button .icon{
+        display: flex;
+      }
+
+
+
+
+      .connect h1 {
+        font-size: 38px;
+        padding: 10px;
+        margin-right: 10px;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      />
+    </head>
+    <body>
+
+
+
+      <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label  class="logo">Vaishnavi Shinde</label>
+        <ul>
+            <li><a href="./Home.html">Home</a></li>
+            <li><a href="./Skill.html">Skill</a></li>
+            <li><a class="active"  href="./Blog.html">Blog / Project</a></li>
+            <li><a href="./My Intro.html">My Intro</a></li>
+            <li><a href="./Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    
+
+
+            <section class="about">
+              <img src="./About.jpg" alt="Profile Picture" />
+              <h1>About <span>Me</span></h1>
+              <p>
+                I'm a smart-working engineering student specialized in Computer science
+                and Engineering. Along with my degree, I completed Full Stack Developer
+                Specilied in <span style="color: #00bcd4">MERN Technology</span> SQL,
+                Java, Data science and analystics courses, and various technologies. I
+                learned skills that helped me develop a project called
+                <span>"Weather detector and Smart Hotel managment system"</span>. It was during
+                this project that I discovered I am a team player. I am currently
+                seeking roles where I can utilize my experience and skill.
+              </p>
+              <a href="./resume vs.png" class="download-button">Download Resume</a>
+            </section>
+
+            <div class="connect" style="display: block;">
+                <h1 ><u>Connect me .......     </u></h1>
+
+                <div class="symbol" style="display: flex; gap: 30px; margin-top: 10px ;"  >
+                    <div class="button" onclick="showMessage('Github')">
+                      <div class="icon">
+                        <a href="https://github.com/CTT-Vaishnavi"
+                          ><i class="fa-brands fa-github" style="color: #000;"></i
+                        ></a>
+                      </div>
+                      <span>Github</span>
+                    </div>
+        
+                    <div class="button" onclick="showMessage('Whatsapp')">
+                      <div class="icon">
+                        <a
+                          href="https://wa.me/+918177921044"
+                          target="_blank"
+                          style="color: #25d366"
+                          ><i class="fa-brands fa-whatsapp"></i
+                        ></a>
+                      </div>
+                      <span>Whatsapp</span>
+                    </div>
+        
+                    <div class="button" onclick="showMessage('LinkedIn')">
+                      <div class="icon">
+                        <a href="https://www.linkedin.com/in/vaishnavi-shinde-11226733a" style="color: #4267b2;"
+                          ><i class="fa-brands fa-linkedin"></i
+                        ></a>
+                      </div>
+                      <span>LinkedIn</span>
+                    </div>
+        
+                    <div class="button" onclick="showMessage('Instagram')">
+                      <div class="icon">
+                        <a href="https://www.instagram.com/_Its_vaishushinde0064"
+                        style="color: #c13584;"
+                          ><i class="fa-brands fa-instagram"></i
+                        ></a>
+                      </div>
+                      <span>Instagram</span>
+                    </div>
+
+
+                    <div class="button" onclick="showMessage('Gmail')">
+                      <div class="icon">
+                        <a href="mailto:shindevai2004@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                      </div>
+                      <span>Gmail</span>
+                    </div>
+    
+                </div>
+
+            </div>
+
+            
+
+            <script>
+              function showMessage(platform) {
+                alert(`You clicked on: ${platform}`);
+              }
+            </script>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

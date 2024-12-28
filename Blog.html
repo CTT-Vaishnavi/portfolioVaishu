@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coder</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    />
+   <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  nav {
+    background-color: green;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul li {
+    margin-right: 20px;
+  }
+  
+  ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  ul li a:hover {
+    color: lightgreen;
+  }
+  
+  .checkbtn {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    display: none;
+  }
+  
+  #check {
+    display: none;
+  }
+  /* Styles for mobile devices */
+@media (max-width: 768px) {
+  .checkbtn {
+    display: block;
+    order: 1;
+    margin-right: 20px;
+  }
+
+  ul {
+    position: fixed;
+    top: 80px;
+    right: -100%;
+    background-color: green;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+  }
+
+  ul li {
+    margin: 20px 0;
+  }
+
+  ul li a {
+    font-size: 20px;
+  }
+
+  #check:checked ~ ul {
+    right: 0;
+  }
+}
+
+/* Styles for larger screens */
+@media (min-width: 769px) {
+  .checkbtn {
+    display: none; /* Hide the button on larger screens */
+  }
+
+  ul {
+    position: static; /* Change position to static */
+    display: flex; /* Display as a flex container */
+    flex-direction: row; /* Align items in a row */
+    justify-content: flex-end; /* Align items to the right */
+    background-color: transparent; /* Change background color */
+    height: auto; /* Set height to auto */
+    transition: none; /* Remove transition */
+  }
+
+  ul li {
+    margin: 0 20px; /* Adjust margin for horizontal layout */
+  }
+
+  ul li a {
+    font-size: 16px; /* Adjust font size for larger screens */
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0;
+  color: #ff6c27;
+}
+
+h1 a {
+  text-decoration: none;
+  color: #ff6c27;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav li {
+  margin-left: 20px;
+}
+
+nav a {
+  text-decoration: none;
+ 
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ff6c27;
+}
+
+.hero {
+  padding: 100px 0;
+}
+
+.hero-text {
+  text-align: center;
+}
+
+.hero-text h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.services {
+  padding: 50px 0;
+}
+
+.services .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.service {
+  background-color: #222;
+  padding: 30px;
+  margin-bottom: 20px
+}
+
+h3
+{
+    color: #fff;
+    font-size: 28px;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+p{
+    color: yellow;
+}
+h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+/* Service Box */
+.service-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.service {
+  background-color: #222;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.service h2 {
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.service p {
+  margin-bottom: 10px;
+}
+
+.service a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #111;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #111;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .service {
+    width: 100%;
+  }
+}
+.service .icon i {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 10px;
+}@media (max-width: 768px) {
+  .project1 {
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+}
+.project1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 5px;
+}
+a {
+  text-decoration: none;
+  color: #007BFF;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+.service .btn {
+  display: inline-block;
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.service .btn:hover {
+  background-color: #0056b3;
+}
+
+   </style>
+  </head>
+  <body>
+
+
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+      </label>
+      <label  class="logo">Vaishnavi Shinde</label>
+      <ul>
+        <li><a href="./Home.html">Home</a></li>
+        <li><a href="./Skill.html">Skill</a></li>
+        <li><a class="active"  href="./Blog.html">Blog / Project</a></li>
+          <li><a href="./My Intro.html">My Intro</a></li>
+          <li><a href="../Contact.html">Contact</a></li>
+      </ul>
+  </nav>
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-text">
+          <h2 style="color: #111;">What <span style="color: aqua;">I am</span> Expert In</h2>
+          <h1 style="color: #111;">My Service</h1>
+        </div>
+      </div>
+    </section>
+    <section class="services">
+      <div class="container" style="display: flex">
+        <div class="service">
+          <div class="icon">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+          </div>
+          <h3>Web Design</h3>
+          <p>
+            One way to categorize the activities is in terms of the
+            professional's area of expertise such as competitive analysis,
+            corporate strategy.
+          </p>
+          <a href="https://www.javatpoint.com/mern-stack" class="btn">Read More</a>
+        </div>
+        <div class="service">
+          <div class="icon">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <h3>Web Development</h3>
+          <p>
+            web application built using the MERN technology stack, which
+            consists of MongoDB, Express.js, React, and Node.js, meaning a
+            developer proficient in these technologies created the website,
+            handling both the front-end (user interface with React) and back-end
+            (server logic with Node.js and Express) aspects of the application,
+            often utilizing MongoDB for data storage.
+          </p>
+          <a href="https://www.geeksforgeeks.org/courses/mern-full-stack-development-classroom" class="btn">Read More</a>
+        </div>
+        <div class="service">
+          <div class="icon">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </div>
+          <h3>Creative Design</h3>
+          <p>
+            One way to categorize the activities is in terms of the
+            professional's area of expertise such as competitive analysis,
+            corporate strategy.
+          </p>
+          <a href="https://dribbble.com/tags/mern-stack" class="btn">Read More</a>
+        </div>
+        <div class="service">
+          <div class="icon">
+            <i class="fa-duotone fa-solid fa-laptop-code"></i>
+          </div>
+          <h3>UI/UX Design</h3>
+          <p>
+            A UI/UX design developed by a MERN stack developer would likely
+            showcase a website or application built using React.js for the
+            front-end, providing interactive and visually appealing user
+            interfaces, while leveraging the backend capabilities of Node.js and
+            Express.js for data management and API interactions, all powered by
+            a MongoDB database for flexible data storage; essentially combining
+            the strengths of the MERN stack to create a user-friendly and
+            dynamic experience
+          </p>
+          <a href="https://www.quora.com/Can-I-become-both-a-UI-UX-designer-as-well-as-a-full-stack-developer" class="btn">Read More</a>
+        </div>
+        <div class="service">
+          <div class="icon">
+            <i class="fa-brands fa-android"></i>
+          </div>
+          <h3>Software Developement</h3>
+          <p>
+            A MERN stack developer would typically develop web applications
+            using the MERN technology stack, which includes MongoDB (database),
+            Express.js (backend framework), React (frontend library), and
+            Node.js (runtime environment), allowing them to build both the
+            front-end user interface and the back-end server logic using
+            primarily JavaScript across the entire application.
+          </p>
+          <a href="https://sonatafy.com/mern-stack-developers/" class="btn">Read More</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  
+  <div class="project1" style="display: block; align-items: center;"   >
+    <h1 style="color: #111; text-align: center; display: block;">My Project</h1>
+    <div class="project1">
+  
+      <div class="service" class="Project" style="display: block;gap: 10px; margin: 10px;">
+        <div class="icon">
+          <i class="fa-brands fa-android"></i>
+        </div>
+        <h3>Weather app</h3>
+        <p>
+          weather application, we leverage the core web development technologies: HTML, CSS, and JavaScript. Each of these technologies plays a vital role in structuring, styling, and adding interactivity to the application
+        </p>
+        <a href="https://github.com/CTT-Vaishnavi/Weather-app">Visit</a>
+        <a href="https://ctt-vaishnavi.github.io/Weather-app/" class="btn">Demo</a>
+      </div>
+
+
+  <div class="service" class="Project">
+    <div class="icon">
+      <i class="fa-brands fa-app-store"></i>
+    </div>
+    <h3>Chatbot</h3>
+    <p>
+      Own chatbot can be essential and beneficial for various purposes, including:
+  Customer Support: Automate responses to FAQs and provide 24/7 assistance to customers.
+  Personal Assistant: Manage tasks, set reminders, and organize schedules.
+  E-commerce: Assist users with product recommendations and guide them through the purchasing process.
+  Education: Help with learning by answering questions, providing explanations, or delivering personalized study materials.
+  Business Efficiency: Streamline internal processes like HR queries or IT troubleshooting.</p>
+    <a href="https://github.com/CTT-Vaishnavi/Chatbotapp">Visit</a>
+    <a href="https://ctt-vaishnavi.github.io/Chatbotapp/" class="btn">Demo</a>
+  </div>
+  
+  
+  
+  <div class="service" class="Project">
+    <div class="icon">
+      <i class="fa-brands fa-readme"></i>
+    </div>
+    <a href="https://github.com/CTT-Vaishnavi" class="btn">Read More</a>
+</div>
+</div>
+
+
+  </body>
+</html>

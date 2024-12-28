@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  nav {
+    background-color: green;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul li {
+    margin-right: 20px;
+  }
+  
+  ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  ul li a:hover {
+    color: lightgreen;
+  }
+  
+  .checkbtn {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    display: none;
+  }
+  
+  #check {
+    display: none;
+  }
+  /* Styles for mobile devices */
+@media (max-width: 768px) {
+  .checkbtn {
+    display: block;
+    order: 1;
+    margin-right: 20px;
+  }
+
+  ul {
+    position: fixed;
+    top: 80px;
+    right: -100%;
+    background-color: green;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+  }
+
+  ul li {
+    margin: 20px 0;
+  }
+
+  ul li a {
+    font-size: 20px;
+  }
+
+  #check:checked ~ ul {
+    right: 0;
+  }
+}
+
+/* Styles for larger screens */
+@media (min-width: 769px) {
+  .checkbtn {
+    display: none; /* Hide the button on larger screens */
+  }
+
+  ul {
+    position: static; /* Change position to static */
+    display: flex; /* Display as a flex container */
+    flex-direction: row; /* Align items in a row */
+    justify-content: flex-end; /* Align items to the right */
+    background-color: transparent; /* Change background color */
+    height: auto; /* Set height to auto */
+    transition: none; /* Remove transition */
+  }
+
+  ul li {
+    margin: 0 20px; /* Adjust margin for horizontal layout */
+  }
+
+  ul li a {
+    font-size: 16px; /* Adjust font size for larger screens */
+  }
+}
+.profile-pic {
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes the image round */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    margin-bottom: 20px; /* Space between the image and the heading */
+}
+        /* Reset some default styles */
+body, h2, p {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* General styles for the contact section */
+.contact {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.content {
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Container for contact information and form */
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Styles for contact information boxes */
+.contectInfo {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.box {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    font-size: 2em;
+    color: #007BFF;
+    margin-right: 15px;
+}
+
+.text h3 {
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+
+.text p {
+    color: #777;
+}
+
+/* Styles for the contact form */
+.contactFrom {
+    flex: 1;
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contactFrom h2 {
+    margin-bottom: 20px;
+}
+
+.inputBox {
+    padding-top: 10px;
+    position: relative;
+    margin-bottom: 30px; /* Increased margin for more space between input boxes */
+}
+
+.inputBox input,
+.inputBox textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.inputBox input:focus,
+.inputBox textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.inputBox span {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+.inputBox input:focus + span,
+.inputBox textarea:focus + span,
+.inputBox input:not(:placeholder-shown) + span,
+.inputBox textarea:not(:placeholder-shown) + span {
+    top: -18px;
+    left: 5px;
+    font-size: 0.9em;
+    color: #007BFF;
+}
+
+.inputBox input[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.inputBox input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+
+
+    
+  <nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+    </label>
+    <label  class="logo">Vaishnavi Shinde</label>
+    <ul>
+        <li><a href="./Home.html">Home</a></li>
+        <li><a href="./Skill.html">Skill</a></li>
+        <li><a class="active"  href="./Blog.html">Blog / Project</a></li>
+        <li><a href="./My Intro.html">My Intro</a></li>
+        <li><a href="./Contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+
+    <section class="contact">
+        <div class="content">
+            <img src="./pic.jpg" style="border: 5px solid #007BFF;" alt="Vaishnavi Shinde" class="profile-pic">
+            <h2>Contact Me <br>For Work and General Enquiries</h2>
+            <p>Hey <br> I am Vaishnavi Shinde <br> full stack developer specillised in MERN technology . Skill of the mongo DB, Express ,React,Node Js . Extra skill of the HTML ,CSS,PHP,JS.</p>
+        </div>
+        <div class="container">
+            <div class="contectInfo">
+                <div class="box">
+                    <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p>@SOS Post Jogwade <br>Tal Jintur Dist Parbhani <br>431509 </p>
+                    </div>
+                </div>
+                
+
+                <div class="box">
+                    <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>shindevai2004@gmail.com</p>
+                    </div>
+                </div>
+
+
+                <div class="box">
+                    <div class="icon"><i class="fa-sharp fa-solid fa-phone-volume"></i></div>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>817-792-1044</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contactFrom">
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    <h2>Get in touch</h2>
+                    <div class="inputBox">
+                        <input type="hidden" name="access_key" value="da7823d7-1889-4950-8437-74af7064b064">
+                        <input type="text" name="first_name"  required="required">
+                        <span>Full Name</span>
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="email" name="email" required="required">
+                        <span>Email</span>
+                    </div>
+
+                    <div class="inputBox">
+                        <textarea name="message" required required="required"></textarea>
+                        <span>Type your message.....</span>
+                    </div>
+
+                    <div class="from-check">
+                        <input type="checkbox" class="form-check-input" id="isclient">
+                        <label  type="name" for="isclient" style="color: #007BFF;">I want you to work on project me</label>
+                    </div>
+
+                
+                    <div class="inputBox">
+                       <input type="submit" name="" value="Submit">
+                        
+                    </div>
+                </form>
+            </div>
+
+
+
+        </div>
+    </section>
+</body>
+</html>

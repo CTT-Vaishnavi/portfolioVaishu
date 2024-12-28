@@ -1,0 +1,411 @@
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Roboto+Slab:wght@100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+.sidebar .nav{
+    padding: 45px;
+}
+.sidebar .nav li{
+    list-style: none;
+    font-size: 30px;
+    padding: 32px 0;
+}
+
+
+.sidebar .nav li a{
+    text-decoration: none;
+    color: black;
+   
+}
+
+.main{
+    /* background-color: yellow; */
+    width: 90vw;
+    padding: 15vh;
+}
+.container{
+    display: flex;
+}
+.infocontainer{
+   /* background-color: rgb(82, 244, 13); */
+   height: 58vh;
+   width: 80vw;
+   margin: 147px auto;
+   /* margin: 144px ; */
+   display: flex; 
+   justify-content: space-around;
+
+}
+.hello{
+    /* font-size: 65px ; */
+    font-size: 7vh ;
+
+}
+
+.name{
+    
+    /* font-size: 50px; */
+    font-size: 6vh;
+    font-weight: bold;
+    font-family: "Roboto Slab", serif;
+
+}
+
+.about{
+/* font-size: 40px; */
+font-size: 5vh;
+}
+.moreabout{
+    font-size: 3vh;
+    /* font-size: 22px; */
+    font-family: "Roboto Slab", serif;
+    margin-top: 25px;
+}
+
+
+.button {
+    margin-top: 34px;
+}
+
+.hire{
+    margin-top: 34px;
+    justify-content:center ;
+}
+
+.button button{
+    /* list-style: none; */
+    padding:9px 14px;
+    border-radius: 22px;
+font-size: 4vh;
+font-weight: bold;
+color: white;
+background-color: dodgerblue;
+margin: 0 3px;
+cursor: pointer;
+}
+
+.button button:hover{
+    background-color: white;
+    color: dodgerblue;
+}
+
+.devpic img{
+    height: 58vh;
+
+}
+
+.info{
+    display: flex;
+    justify-content:center ;
+    flex-direction: column;
+    font-family: "Source Code Pro", monospace;
+}
+
+.button a{
+    display: block;
+    text-decoration: none;
+}
+
+
+
+.nav a:hover {
+    color: aqua;
+}
+
+
+h3 u {
+    text-decoration: none; /* Remove default underline */
+    border-bottom: 2px solid #007BFF; /* Custom underline */
+    padding-bottom: 5px; /* Space between text and underline */
+    transition: border-color 0.3s; /* Smooth transition for hover effect */
+}
+.main{
+    padding: 10px;
+}
+.hamburger{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+}
+
+.hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 1000; /* Ensure it is above other elements */
+}
+
+.ham, .cross {
+    width: 33px;
+    height: 33px;
+}
+.cross{
+    margin-left: 130px;
+}
+
+.devpic img {
+
+    border-radius: 10px;
+}
+
+/* Mobile-first styles for screens up to 650px */
+@media only screen and (min-width: 368px) and (max-width: 650px) {
+    .infocontainer {
+        flex-direction: column; /* Stack the info and image on smaller screens */
+        align-items: center; /* Center align items */
+        margin-left: 150px; /* Adjust margin for smaller screens */
+    }
+
+    .info {
+        margin-left: 0; /* Reset margin for smaller screens */
+    }
+
+    .devpic {
+        margin-top: 20px; /* Add some space between the text and image */
+    }
+}
+
+@media only screen and (min-width: 368px) and (max-width: 650px) {
+    .info {
+        /* align-items: center; */ /* Uncomment if you want to use this */
+        margin-right: 150px;
+        margin-left: 150px; /* Apply margin for screens between 368px and 650px */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+nav {
+    background-color: green;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul li {
+    margin-right: 20px;
+  }
+  
+  ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  ul li a:hover {
+    color: lightgreen;
+  }
+  
+  .checkbtn {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    display: none;
+  }
+
+
+.social-media {
+    text-align: center; /* Center the text */
+    margin: 20px 0; /* Add some margin */
+}
+
+.social-media h3 {
+    margin-bottom: 15px; /* Space between heading and icons */
+}
+
+.social-media ul {
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center the icons */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.social-media li {
+    margin: 0 10px; /* Space between icons */
+}
+
+.social-media a {
+    text-decoration: none; /* Remove underline from links */
+    font-size: 24px; /* Set a base font size for icons */
+    color: #000; /* Default icon color */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+.social-media a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* Responsive adjustments for medium-sized screens */
+@media (max-width: 768px) {
+    .social-media a {
+        font-size: 20px; /* Smaller icons on mobile */
+    }
+}
+
+/* Responsive adjustments for small-sized screens */
+@media (max-width: 480px) {
+    .social-media a {
+        font-size: 5vh; /* Even smaller icons on very small screens */
+    }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .checkbtn {
+    display: block;
+    order: 1;
+    margin-right: 20px;
+  }
+
+  ul {
+    position: fixed;
+    top: 60px;
+    right: -100%;
+    background-color: green;
+    width: 100%;
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+  }
+
+  ul li {
+    margin: 15px 0;
+  }
+
+  ul li a {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+
+  #check:checked ~ ul {
+    right: 0;
+  }
+
+  .infocontainer {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .hello, .name, .about, .moreabout {
+    font-size: 4vw;
+  }
+
+  .button {
+    margin: 15px 0;
+  }
+
+  .devpic img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .connect {
+    margin: 20px auto;
+    padding: 10px;
+  }
+
+  .symbol {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .social-media a {
+    font-size: 22px;
+  }
+
+  .connect h1 {
+    font-size: 6vw;
+  }
+}
+
+/* For smaller screens (below 480px) */
+@media (max-width: 480px) {
+  ul li a {
+    font-size: 16px;
+  }
+
+  .hello{
+    font-size: 50px;
+  }
+  .hello, .name{
+    font-size: 55px;
+  }
+  .hello, .name, .about{
+    font-size: 25px;
+  }
+
+  .hello, .name, .about ,.moreabout {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+  }
+  .connect h1 {
+    font-size: 7vw;
+  }
+
+  .symbol {
+    gap: 10px;
+  }
+
+  .social-media a {
+    font-size: 20px;
+  }
+  .devpic img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+.symbol{
+    transition: transform 0.3s, background-color 0.3s;
+    padding: 10px;
+}
+.symbol :hover{
+    transform: scale(1.1);
+    color: aqua;
+}
+.connect h1 {
+    transition: transform 0.3s, background-color 0.3s;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+.connect h1:hover {
+    transform: scale(1.1);
+    color: aqua;
+    
+}
